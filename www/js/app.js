@@ -120,6 +120,7 @@ function watermark(id,img1src,img2src) {
 			var _canvas=document.getElementById("canvas_");
 			var data = _canvas.toDataURL(); 
 			$('#canvas').attr("src",data);
+			$('#canvas').attr("data-rel",data.substring(22));
 			waititgo();
 
 		};
@@ -195,13 +196,12 @@ function largecancel(){
 	$('.imgsharecontent').attr('onclick','large()');
 }
 function DownLoadReportIMG(imgPathURL){  
-           
-        //如果隐藏IFRAME不存在，则添加  
-        if (!document.getElementById("IframeReportImg"))  
             $('<iframe style="display:none;" id="IframeReportImg" name="IframeReportImg" onload="DoSaveAsIMG();" width="0" height="0" src="about:blank"></iframe>').appendTo("body");  
         if (document.all.IframeReportImg.src != imgPathURL) {  
             //加载图片  
             document.all.IframeReportImg.src = imgPathURL;  
+			
+            DoSaveAsIMG(); 
         }  
         else {  
             //图片直接另存为  
@@ -209,7 +209,7 @@ function DownLoadReportIMG(imgPathURL){
         }  
     }  
 function DoSaveAsIMG(){  
-		document.frames("IframeReportImg").document.execCommand("SaveAs");
+	document.getElementById("IframeReportImg").document.execCommand("SaveAs");
 	}
 
 function doshare(){

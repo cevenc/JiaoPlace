@@ -37,6 +37,7 @@
 		</style>
 
 		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
 
 		<!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
@@ -71,6 +72,8 @@
 		</script>
 -->
 		<script src="js/app.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/amazeui.min.js"></script>
 	</head>
 
 	<body>
@@ -119,7 +122,11 @@ top: 12px;"></span></a>
 					<div class="widget-container content-area horiz-area wrapping-col right pull-right"></div> <a><h1 class="title">请选择模板</h1></a>
 				</header>
 				<div class="upage-content content-area left wrapping-col" style="top: 44px;" id="page_10_28">
-					<img id="canvas" src="">
+					<figure data-am-widget="figure" class="am am-figure am-figure-default "
+data-am-figure="{  pureview: 'true' }">
+  <img id="canvas" />
+  <figcaption class="am-figure-capition-btm">春天的花开秋天的风以及冬天的落阳</figcaption>
+</figure>
 					<canvas id="canvas_" width="864" height="486"></canvas>
 					<img id="img">
 					<div class="selectcube">
