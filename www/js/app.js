@@ -33,7 +33,7 @@ function onDeviceReadyi() {
 		// Do something with the returned AV.Object values
 		for (var i = 0; i < results.length ; i++) {
 		var object = results[i];
-		document.getElementById('imgli').innerHTML+='<li class="table-view-cell widget uib_w_8" data-uib="ratchet/list_item" data-ver="0" style="padding:0"><img src="'+object.get("photofile").url()+'" style="width:100%"></li>';
+		document.getElementById('imgli').innerHTML+='<li class="table-view-cell widget uib_w_8" data-uib="ratchet/list_item" data-ver="0" style="padding:0"><figure data-am-widget="figure" class="am am-figure am-figure-default " data-am-figure="{ pureview: 'true'}"><img src="'+object.get("photofile").url()+'"  data-rel="'+object.get("photofile").url()+'" style="width:100%"></figure></li>';
 			console.log("sus");
 			waititgo();
 		}
