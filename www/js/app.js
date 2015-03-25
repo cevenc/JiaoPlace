@@ -156,6 +156,7 @@ function uploadit(base64){
 			// Execute any logic that should take place after the object is saved.
 			this.photourl=photo.get("photofile").url();
 				console.log(this.photourl);
+                $('#imgsharecontent').attr("data-rel",this.photourl);
 			},
 			error: function(photo, error) {
 			// Execute any logic that should take place if the save fails.
@@ -178,7 +179,7 @@ function share(){
 	var _canvas=document.getElementById("canvas_");
 	var data = _canvas.toDataURL(); 
 	var b64 = data.substring(22); 
-//	uploadit(b64);
+	uploadit(b64);
 	$('#imgsharecontent').attr("src",data);
 	waititgo();
 }
