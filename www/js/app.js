@@ -23,7 +23,9 @@
 AV.initialize("7eqc976ehi2s13n8kjly6rxd230qfqhfvq4ughgqzq2ntrz5", "9ye5tws6xm92hhy8xgu9ca25q7k6d1pbn9a832xa7xpb835y");
 document.addEventListener("deviceready", onDeviceReadyi, false);
 function onDeviceReadyi() {
-	function refresh(){
+	
+}
+function refresh(){
 	waitit();
 	var query = new AV.Query("photo");
 	query.descending("createdAt");
@@ -33,9 +35,10 @@ function onDeviceReadyi() {
 		// Do something with the returned AV.Object values
 		for (var i = 0; i < results.length ; i++) {
 		var object = results[i];
-		document.getElementById('imgli').innerHTML+='<li class="table-view-cell widget uib_w_8" data-uib="ratchet/list_item" data-ver="0" style="padding:0"><img src="'+object.get("photofile").url()+'" style="width:100%"></li>';
+		document.getElementById('imgli').innerHTML+='<li class="table-view-cell widget uib_w_8" data-uib="ratchet/list_item" data-ver="0" style="padding:0"><figure data-am-widget="figure" class="am am-figure am-figure-default " data-am-figure="{  pureview: '+"'true'"+' }"><img src="'+object.get("photofile").url()+'" style="width:100%" data-rel="'+object.get("photofile").url()+'" /></figure></li>';
 			console.log("sus");
 			waititgo();
+            //
 		}
 	},
 	error: function(error) {
@@ -44,7 +47,6 @@ function onDeviceReadyi() {
 	});
 	}
 	refresh();
-}
 function waitit(){
 	$('#wait').css("display","block");
 }
